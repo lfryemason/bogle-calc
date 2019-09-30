@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-export default class ButtonBar extends Component {
+import { AppState } from './MainApp';
+
+export default class ButtonBar extends Component<AppState> {
     render() {
-        return(<div></div>);
+        return(<div>{}</div>);
     }
 }
