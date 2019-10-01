@@ -62,10 +62,11 @@ export default class AttachedCreature extends Component<AttachedCreatureProps> {
                         alt={""} 
                 />
 
-                {enchantments.map(enchantment => 
+                {enchantments.map((enchantment, index) => 
                     <img style={imageStyle} 
                             src={enchantment.png} 
                             alt={enchantment.name} 
+                            key={index}
                     />
                 )}
 

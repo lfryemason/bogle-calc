@@ -1,5 +1,7 @@
 import React, {Component, CSSProperties} from 'react';
 
+import { CreatureType } from '../CardTypes';
+
 import { CreatureList } from '../constants/CardInformation';
 
 const addCreatureStyle: CSSProperties = {
@@ -15,13 +17,22 @@ const imageStyle: CSSProperties = {
     height: "auto",
     maxHeight: "100%"
 }
-export default class AddCreature extends Component {
+
+interface AddCreatureProps {
+    addCreatureFunc: (creature: CreatureType) => void,
+}
+
+export default class AddCreature extends Component<AddCreatureProps> {
     render() {
         const creatureList = CreatureList;
         return(
             <div style={addCreatureStyle}>
                 {creatureList.map(creature => 
-                    <img src={creature.png} style={imageStyle}/>    
+                    <img src={creature.png} 
+                            style={imageStyle}
+                            onClick={() => this.props.addCreatureFunc(creature)}
+                            key={creature.name}
+                    />    
                 )}
             </div>
         );

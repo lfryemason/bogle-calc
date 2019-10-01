@@ -23,3 +23,8 @@ export const CreatureList: CreatureType[] =
 [
     SlipperyBogle,
 ]
+
+export const EnchantmentList: EnchantmentType[] = 
+[
+    DaybreakCoronet,
+]

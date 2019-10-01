@@ -2,6 +2,7 @@ import React, {Component, CSSProperties} from 'react';
 import { AppState } from './MainApp';
 
 import RefreshButton from '../res/RefreshButton.png';
+import { EnchantmentType } from '../CardTypes';
 
 const buttonBarStyle: CSSProperties = {
     height: "70px",
@@ -24,15 +25,25 @@ const addEnchantmentStyle: CSSProperties = {
     color: "#0090FF",
     fontSize: "21px"
 }
-export default class ButtonBar extends Component<AppState> {
+
+interface ButtonBarProps {
+    appState: AppState,
+    openAddEnchantment: () => void,
+    refresh: () => void,
+}
+
+export default class ButtonBar extends Component<ButtonBarProps> {
     render() {
         return(
             <div style={buttonBarStyle}>
                 <img src={RefreshButton}
                         style={refreshButtonStyle}
+                        onClick={this.props.refresh}
                 />
 
-                <button style={addEnchantmentStyle} >
+                <button style={addEnchantmentStyle} 
+                        onClick={this.props.openAddEnchantment}
+                >
                     Add enchantment
                 </ button>
             </div>);

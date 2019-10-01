@@ -18,7 +18,7 @@ const cancelButtonStyle: CSSProperties = {
 export default class CancelButton extends Component<CancelButtonState> {
     render() {
         return(
-            <button style={cancelButtonStyle} >
+            <button style={cancelButtonStyle} onClick={this.props.cancelAddPanel}>
                 Cancel
             </ button>
         );
