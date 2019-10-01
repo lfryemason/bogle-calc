@@ -65,7 +65,10 @@ export default class MainApp extends Component<any, AppState> {
         return(
             <div style={fullPage}>
                 <div style={mainAppStyle}>
-                    <CreatureHeader {...this.state} />
+                    <CreatureHeader {...this.state} 
+                        openAddCreature={() => this.setState({pickCreatureOpen: true})}
+                        changeSelectedCreature={this.changeSelectedCreature}    
+                    />
                     {this.renderSwitch()}
                 </div>
             </div>
@@ -99,12 +102,11 @@ export default class MainApp extends Component<any, AppState> {
             );
         }
 
-        const { creatures } = this.state; 
+        const index = this.state.selectedCreatureIndex;
+        const creature = this.state.creatures[index]; 
         return(
             <div style={bodyStyle}>
-                {creatures.map(creature =>
-                    <AttachedCreature creatureState={creature} key={creature.index} />
-                )}
+                <AttachedCreature creatureState={creature} />
                 <ButtonBar appState={this.state} 
                         openAddEnchantment={() => this.setState({pickEnchantmentOpen: true})}
                         refresh={() => this.setState(initialState)}
@@ -137,6 +139,11 @@ export default class MainApp extends Component<any, AppState> {
         }
         const creatures = this.state.creatures;
         const selectedCreature = this.state.creatures[this.state.selectedCreatureIndex];
+        if(selectedCreature.index !== index) {
+            console.error("Creatures unsorted");
+            return;
+        }
+
         const newCreature = {index: index,
             creature: selectedCreature.creature,
             enchantments: [...selectedCreature.enchantments, enchantment],
@@ -146,9 +153,11 @@ export default class MainApp extends Component<any, AppState> {
         const newCreatureCalculate: CreatureState = 
             this.calculatePowerToughness(
                     newCreature,
-                    creatures.splice(index, 1),
+                    [...creatures.slice(0, index), ...creatures.slice(index+1)],
                     this.state.nonAuraEnchantments);
-        const newCreatures = [...creatures.splice(index, 1), newCreatureCalculate]
+        const newCreatures = [...creatures.slice(0, index), 
+                newCreatureCalculate, 
+                ...creatures.slice(index+1)]
                 .sort((a,b) => a.index - b.index);
         this.setState({
             creatures: newCreatures,
@@ -182,5 +191,13 @@ export default class MainApp extends Component<any, AppState> {
                 return enchantment.powerToughnessFunc(acc, totalNumEnchantments);
             }, baseWithCreature)
         return {...creatureState, powerToughness: result};
+    }
+
+    changeSelectedCreature: (num: number) => void = num => {
+        if ( num >= 0 || num < this.state.creatures.length ) {
+            this.setState({selectedCreatureIndex: num});
+            return;
+        }
+        console.error("Selected creature is outside range");
     }
 }

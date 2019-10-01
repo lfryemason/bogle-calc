@@ -5,6 +5,7 @@ import {CreatureType , EnchantmentType} from '../CardTypes';
 
 export const SlipperyBogle: CreatureType = {
     name: "Slippery Bogle",
+    shortName: "Bogle",
     png: slipperyBoglePic,
     baseKeywords: ["hexproof"],
     basePowerToughness: {power: 1, toughness: 1},

@@ -5,6 +5,7 @@ export interface PowerToughness {
 
 export interface CreatureType {
     name: string,
+    shortName: string,
     png: any,
     basePowerToughness: PowerToughness,
     baseKeywords: string[],

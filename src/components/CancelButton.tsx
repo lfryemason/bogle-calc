@@ -5,7 +5,7 @@ interface CancelButtonState {
 } 
 
 const cancelButtonStyle: CSSProperties = {
-    height: "50px",
+    height: "40px",
     width: "calc(100% - 32px)",
     backgroundColor: "#F5F5F5",
     border: "4px #FF0000 solid",

@@ -5,20 +5,20 @@ import RefreshButton from '../res/RefreshButton.png';
 import { EnchantmentType } from '../CardTypes';
 
 const buttonBarStyle: CSSProperties = {
-    height: "70px",
+    height: "50px",
     padding: "10px",
     display: "flex",
     justifyContent: "space-between",
 }
 
 const refreshButtonStyle: CSSProperties = {
-    height: "50px",
-    width: "50px",
+    height: "40px",
+    width: "40px",
 }
 
 const addEnchantmentStyle: CSSProperties = {
-    height: "50px",
-    width: "calc(100% - 70px)",
+    height: "40px",
+    width: "calc(100% - 50px)",
     backgroundColor: "#F5F5F5",
     border: "4px #0090FF solid",
     borderRadius: "10px",
