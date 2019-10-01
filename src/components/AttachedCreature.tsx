@@ -26,7 +26,7 @@ const textboxStyle: CSSProperties = {
     minWidth: "100%",
     height: "200px",
     width: "100%",
-    backgroundColor: "grey",
+    backgroundColor: "#DBD1D0",
     border: "13px black solid",
     borderTop: "2px",
     boxSizing: "border-box",

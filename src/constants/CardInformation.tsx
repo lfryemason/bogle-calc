@@ -18,3 +18,8 @@ export const DaybreakCoronet: EnchantmentType = {
     powerToughnessFunc: powerToughness => 
         ({power: powerToughness.power + 3, toughness: powerToughness.toughness + 3})
 }
+
+export const CreatureList: CreatureType[] = 
+[
+    SlipperyBogle,
+]

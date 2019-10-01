@@ -23,13 +23,24 @@ export interface CreatureState {
     powerToughness: PowerToughness,
 }
 
+const fullPage: CSSProperties = {
+    maxWidth: "100vw",
+    maxHeight: "100vh",
+    overflow: "hidden",
+    backgroundColor: "grey",
+    display: "flex",
+    justifyContent: "center",
+}
+
 const mainAppStyle: CSSProperties = {
-    width: "300px",
+    width: "500px",
     height: "100vh",
+    backgroundColor: "#F5F5F5",
+    overflow: "hidden",
 }
 
 const bodyStyle: CSSProperties = {
-    height: "100%",
+    height: "calc(100% - 110px)",
 }
 
 export default class MainApp extends Component<any, AppState> {
@@ -38,15 +49,17 @@ export default class MainApp extends Component<any, AppState> {
             enchantments: [CardInfo.DaybreakCoronet], 
             keywords: ["hexproof", "vigilance", "lifelink"], 
             powerToughness: {power: 1, toughness: 1}}],
-        pickCreatureOpen: false,
+        pickCreatureOpen: true,
         pickEnchantmentOpen: false
     }
 
     render() {
         return(
-            <div style={mainAppStyle}>
-                <CreatureHeader {...this.state} />
-                {this.renderSwitch()}
+            <div style={fullPage}>
+                <div style={mainAppStyle}>
+                    <CreatureHeader {...this.state} />
+                    {this.renderSwitch()}
+                </div>
             </div>
         );
     }
