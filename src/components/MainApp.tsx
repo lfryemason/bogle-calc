@@ -86,7 +86,14 @@ export default class MainApp extends Component<any, AppState> {
         if ( pickEnchantmentOpen ) {
             return(
                 <div style={bodyStyle}>
-                    <AddEnchantment {...this.state} addEnchantmentFunc={this.addEnchantment} />
+                    <AddEnchantment state={this.state} addEnchantmentFunc={this.addEnchantment} 
+                            onChangeNonAuraEnchantments={
+                                (num: number) => {
+                                    if (num < 0)
+                                        return;
+                                    this.setState({nonAuraEnchantments: num})}
+                                }
+                    />
                     <CancelButton cancelAddPanel={this.cancelAddPanel}/>
                 </div>
             );
@@ -146,8 +153,11 @@ export default class MainApp extends Component<any, AppState> {
         this.setState({
             creatures: newCreatures,
         })
-        console.log(newCreatures);
         this.cancelAddPanel();
+    }
+
+    removeEnchantment = {
+        
     }
 
     combineKeywords(arr1: string[], arr2: string[]) : string[] {

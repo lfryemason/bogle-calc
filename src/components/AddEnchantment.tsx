@@ -4,6 +4,8 @@ import { EnchantmentType } from '../CardTypes';
 
 import { EnchantmentList } from '../constants/CardInformation'; 
 
+import { AppState } from './MainApp';
+
 const addEnchantmentStyle: CSSProperties = {
     display: "flex",
     flexDirection: "column",
@@ -21,6 +23,8 @@ const imageStyle: CSSProperties = {
 
 interface AddEnchantmentProps {
     addEnchantmentFunc: (enchantment: EnchantmentType) => void,
+    onChangeNonAuraEnchantments: (num: number) => void,
+    state: AppState,
 }
 
 export default class AddEnchantment extends Component<AddEnchantmentProps> {
@@ -34,6 +38,19 @@ export default class AddEnchantment extends Component<AddEnchantmentProps> {
                             onClick={() => this.props.addEnchantmentFunc(enchantment)}
                             key={enchantment.name}/>    
                 )}
+
+                <button onClick={() => 
+                        this.props.onChangeNonAuraEnchantments(
+                                this.props.state.nonAuraEnchantments +1)}>
+                    ^
+                </button>
+                {this.props.state.nonAuraEnchantments}
+                <button onClick={() => 
+                        this.props.onChangeNonAuraEnchantments(
+                                this.props.state.nonAuraEnchantments -1)}>
+                    v
+                </button>
+
             </div>
         );
     }
