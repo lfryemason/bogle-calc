@@ -11,8 +11,9 @@ const attachedCreatureStyle: CSSProperties = {
     display: "flex",
     flexDirection: "column",
     maxWidth: "100%",
-    maxHeight: "100%",
+    height: "100%",
     overflowY: "auto",
+    overflowX: "hidden",
 }
 
 const imageStyle: CSSProperties = {
@@ -27,13 +28,14 @@ const textboxStyle: CSSProperties = {
     height: "200px",
     width: "100%",
     backgroundColor: "#DBD1D0",
-    border: "13px black solid",
+    border: "19px black solid",
     borderTop: "2px",
     boxSizing: "border-box",
     borderRadius: "0px 0px 16px 16px",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
+    padding: "20px",
 }
 
 const keywordStringStyle: CSSProperties = {

@@ -90,12 +90,7 @@ export default class MainApp extends Component<any, AppState> {
             return(
                 <div style={bodyStyle}>
                     <AddEnchantment state={this.state} addEnchantmentFunc={this.addEnchantment} 
-                            onChangeNonAuraEnchantments={
-                                (num: number) => {
-                                    if (num < 0)
-                                        return;
-                                    this.setState({nonAuraEnchantments: num})}
-                                }
+                            onChangeNonAuraEnchantments={this.changeNumNonAuraEnchantments}
                     />
                     <CancelButton cancelAddPanel={this.cancelAddPanel}/>
                 </div>
@@ -112,6 +107,21 @@ export default class MainApp extends Component<any, AppState> {
                         refresh={() => this.setState(initialState)}
                 />
             </div>);
+    }
+
+    changeNumNonAuraEnchantments: (num: number) => void = num => {
+          if (num < 0)
+              return;
+          const newCreatures = this.updateCreatures(this.state.creatures, num);
+          this.setState({creatures: newCreatures, nonAuraEnchantments: num});
+    }
+
+    updateCreatures(creatures: CreatureState[], numNonAuraEnchantments: number): CreatureState[] {
+        return creatures.map((creature, index) => {
+            return this.calculatePowerToughness(creature, 
+                [...creatures.slice(0, index), ...creatures.slice(index+1)],
+                numNonAuraEnchantments);
+        })
     }
 
     cancelAddPanel = () => {
@@ -150,15 +160,11 @@ export default class MainApp extends Component<any, AppState> {
             keywords: this.combineKeywords(selectedCreature.keywords, enchantment.addedKeywords),
             powerToughness: selectedCreature.powerToughness,    
         }
-        const newCreatureCalculate: CreatureState = 
-            this.calculatePowerToughness(
-                    newCreature,
-                    [...creatures.slice(0, index), ...creatures.slice(index+1)],
-                    this.state.nonAuraEnchantments);
-        const newCreatures = [...creatures.slice(0, index), 
-                newCreatureCalculate, 
-                ...creatures.slice(index+1)]
-                .sort((a,b) => a.index - b.index);
+
+        const newCreatures = this.updateCreatures(
+            [...creatures.slice(0, index), newCreature, ...creatures.slice(index+1)],
+            this.state.nonAuraEnchantments)
+            .sort((a,b) => a.index - b.index);
         this.setState({
             creatures: newCreatures,
         })
@@ -180,7 +186,7 @@ export default class MainApp extends Component<any, AppState> {
         const creature = creatureState.creature;
         const baseStats = creature.basePowerToughness;
         const baseWithCreature = creature.powerToughnessFunc(
-                creature.basePowerToughness,
+                baseStats,
                 creatureState.enchantments.length);
         const totalNumEnchantments = nonAuraEnchantments +
                 otherCreatures.reduce((acc, creatureState) => {
