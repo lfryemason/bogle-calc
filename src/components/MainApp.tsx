@@ -98,6 +98,9 @@ export default class MainApp extends Component<any, AppState> {
         }
 
         const index = this.state.selectedCreatureIndex;
+        if (index < 0 || index >= this.state.creatures.length) {
+          return(<div style={bodyStyle}/>);
+        }
         const creature = this.state.creatures[index]; 
         return(
             <div style={bodyStyle}>
