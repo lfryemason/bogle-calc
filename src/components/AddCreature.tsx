@@ -15,7 +15,8 @@ const addCreatureStyle: CSSProperties = {
 const imageStyle: CSSProperties = {
     width: "100%",
     height: "auto",
-    maxHeight: "100%"
+    maxHeight: "100%",
+    marginBottom: "10px",
 }
 
 interface AddCreatureProps {

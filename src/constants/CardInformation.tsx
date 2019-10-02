@@ -4,7 +4,7 @@ import gladecoverScoutPic from '../res/GladecoverScout.png'
 import korSpiritdancerPic from '../res/KorSpiritdancer.png'
 import slipperyBoglePic from '../res/SlipperyBogle.png';
 
-import armadilloCloakPic from '../res/ArmadilloCloak.png'
+import unflinchingCouragePic from '../res/UnflinchingCourage.png'
 import daybreakCoronetPic from '../res/DaybreakCoronet.png'
 import etherealArmorPic from '../res/EtherealArmor.png'
 import gryffsBoonPic from '../res/GryffsBoon.png'
@@ -53,14 +53,6 @@ export const SlipperyBogle: CreatureType = {
     baseKeywords: ["hexproof"],
     basePowerToughness: {power: 1, toughness: 1},
     powerToughnessFunc: powerToughness => powerToughness,
-}
-
-export const ArmadilloCloak: EnchantmentType = {
-    name: "Armadillo Cloak",
-    png: armadilloCloakPic,
-    addedKeywords: ["trample", "lifelink*"],
-    powerToughnessFunc: powerToughness => 
-        ({power: powerToughness.power + 2, toughness: powerToughness.toughness + 2})
 }
 
 export const DaybreakCoronet: EnchantmentType = {
@@ -126,6 +118,13 @@ export const SpiritMantle: EnchantmentType = {
         ({power: powerToughness.power + 1, toughness: powerToughness.toughness + 1})
 }
 
+export const UnflinchingCourage: EnchantmentType = {
+    name: "Unflinching Courage",
+    png: unflinchingCouragePic,
+    addedKeywords: ["trample", "lifelink"],
+    powerToughnessFunc: powerToughness => 
+        ({power: powerToughness.power + 2, toughness: powerToughness.toughness + 2})
+}
 
 export const CreatureList: CreatureType[] = 
 [
@@ -137,7 +136,6 @@ export const CreatureList: CreatureType[] =
 
 export const EnchantmentList: EnchantmentType[] = 
 [
-    ArmadilloCloak,
     DaybreakCoronet,
     EtherealArmor,
     GryffsBoon,
@@ -146,4 +144,5 @@ export const EnchantmentList: EnchantmentType[] =
     SpiderUmbra,
     SpiritLink,
     SpiritMantle,
+    UnflinchingCourage,
 ]
