@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0f94added1f8e50b284074b727f29c2e",
+    "revision": "5c98562032d1a70f97757814c39de9e9",
     "url": "/bogle-calc/index.html"
   },
   {
-    "revision": "76239530436f451a71f6",
+    "revision": "76e9506b6aa257ceba70",
     "url": "/bogle-calc/static/css/main.dfca195d.chunk.css"
   },
   {
-    "revision": "e007c3fddaa0989fafcf",
-    "url": "/bogle-calc/static/js/2.d4b94315.chunk.js"
+    "revision": "11a274f5cb8a36e5c0cc",
+    "url": "/bogle-calc/static/js/2.6fc6960d.chunk.js"
   },
   {
-    "revision": "76239530436f451a71f6",
-    "url": "/bogle-calc/static/js/main.6168380b.chunk.js"
+    "revision": "76e9506b6aa257ceba70",
+    "url": "/bogle-calc/static/js/main.7f8d8b48.chunk.js"
   },
   {
     "revision": "9297e839cb757a1b3b22",
@@ -22,6 +22,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "12b75d5552814cd619a142009b215958",
     "url": "/bogle-calc/static/media/CardTop.12b75d55.png"
+  },
+  {
+    "revision": "7848ff8532f6d1dfa2e7ad1758c2a2a4",
+    "url": "/bogle-calc/static/media/CartoucheOfSolidarity.7848ff85.png"
   },
   {
     "revision": "b8beb4d787c715a8a7dfaca9c5eed330",
@@ -54,6 +58,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f9aecbfbf7dcbed10d15f8483e2360a7",
     "url": "/bogle-calc/static/media/Rancor.f9aecbfb.png"
+  },
+  {
+    "revision": "dc149012cc6f06ab2e232b4735f71a64",
+    "url": "/bogle-calc/static/media/SilhanaLedgewalker.dc149012.png"
   },
   {
     "revision": "6315ae8ecafe1baf04a282297e975d3c",
