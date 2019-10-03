@@ -5,6 +5,7 @@ import cardTop from '../res/CardTop.png'
 
 interface AttachedCreatureProps {
     creatureState: CreatureState,
+    removeEnchantment: (enchantmentIndex: number) => void,
 }
 
 const attachedCreatureStyle: CSSProperties = {
@@ -69,6 +70,7 @@ export default class AttachedCreature extends Component<AttachedCreatureProps> {
                             src={enchantment.png} 
                             alt={enchantment.name} 
                             key={index}
+                            onClick={() => this.props.removeEnchantment(index)}
                     />
                 )}
 
