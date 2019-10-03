@@ -46,7 +46,7 @@ const powerToughnessBoxStyle: CSSProperties = {
     border: "2px solid black",
     borderRadius: "10px",
     height: "30px",
-    width: "40px",
+    width: "60px",
     textAlign: "center",
     lineHeight: "30px",
     fontSize: "22px",

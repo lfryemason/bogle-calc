@@ -1,12 +1,14 @@
 {
   "name": "bogle-calc",
   "version": "0.1.0",
+  "homepage": "https://lfryemason.github.io/bogle-calc",
   "private": true,
   "dependencies": {
     "@types/jest": "24.0.18",
     "@types/node": "12.7.8",
     "@types/react": "16.9.3",
     "@types/react-dom": "16.9.1",
+    "gh-pages": "^2.1.1",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
     "react-scripts": "^3.1.2",
@@ -14,6 +16,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
