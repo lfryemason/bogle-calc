@@ -94,7 +94,7 @@ export const GryffsBoon: EnchantmentType = {
 export const HyenaUmbra: EnchantmentType = {
     name: "Hyena Umbra",
     png: hyenaUmbraPic,
-    addedKeywords: ["first strike"],
+    addedKeywords: ["first strike", "totem armor"],
     powerToughnessFunc: powerToughness => 
         ({power: powerToughness.power + 1, toughness: powerToughness.toughness + 1})
 }
@@ -110,7 +110,7 @@ export const Rancor: EnchantmentType = {
 export const SpiderUmbra: EnchantmentType = {
     name: "Spider Umbra",
     png: spiderUmbraPic,
-    addedKeywords: ["reach"],
+    addedKeywords: ["reach", "totem armor"],
     powerToughnessFunc: powerToughness => 
         ({power: powerToughness.power + 1, toughness: powerToughness.toughness + 1})
 }

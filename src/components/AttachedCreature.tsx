@@ -5,6 +5,7 @@ import cardTop from '../res/CardTop.png'
 
 interface AttachedCreatureProps {
     creatureState: CreatureState,
+    removeEnchantment: (enchantmentIndex: number) => void,
 }
 
 const attachedCreatureStyle: CSSProperties = {
@@ -46,7 +47,7 @@ const powerToughnessBoxStyle: CSSProperties = {
     border: "2px solid black",
     borderRadius: "10px",
     height: "30px",
-    width: "40px",
+    width: "60px",
     textAlign: "center",
     lineHeight: "30px",
     fontSize: "22px",
@@ -69,6 +70,7 @@ export default class AttachedCreature extends Component<AttachedCreatureProps> {
                             src={enchantment.png} 
                             alt={enchantment.name} 
                             key={index}
+                            onClick={() => this.props.removeEnchantment(index)}
                     />
                 )}
 

@@ -39,6 +39,8 @@ const creatureHeaderStyle: CSSProperties = {
     height: "50px",
     paddingBottom: "5px",
     width: "100%",
+    maxWidth: "100%",
+    overflowX: "auto",
     display: "flex",
     flexDirection: "row",
     textAlign: "center",

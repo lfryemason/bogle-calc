@@ -104,7 +104,7 @@ export default class MainApp extends Component<any, AppState> {
         const creature = this.state.creatures[index]; 
         return(
             <div style={bodyStyle}>
-                <AttachedCreature creatureState={creature} />
+                <AttachedCreature creatureState={creature} removeEnchantment={this.removeEnchantment}/>
                 <ButtonBar appState={this.state} 
                         openAddEnchantment={() => this.setState({pickEnchantmentOpen: true})}
                         refresh={() => this.setState(initialState)}
@@ -174,8 +174,24 @@ export default class MainApp extends Component<any, AppState> {
         this.cancelAddPanel();
     }
 
-    removeEnchantment = {
-        
+    removeEnchantment:(enchantmentIndex: number) => void = (enchantmentIndex) => {
+        const { creatures, selectedCreatureIndex } = this.state;
+        const changedCreature = creatures[selectedCreatureIndex];
+        const enchantments = 
+            [...changedCreature.enchantments.slice(0, enchantmentIndex),
+            ...changedCreature.enchantments.slice(enchantmentIndex + 1)]
+        const newCreature = {...changedCreature, 
+            enchantments: enchantments,
+            keywords: enchantments.reduce(
+                (acc, ench) => this.combineKeywords(acc, ench.addedKeywords), changedCreature.creature.baseKeywords)
+            };
+        const newCreatures = 
+            this.updateCreatures(
+                [...creatures.slice(0, selectedCreatureIndex),
+                    newCreature,
+                    ...creatures.slice(selectedCreatureIndex+1)], 
+                this.state.nonAuraEnchantments);
+        this.setState({creatures: newCreatures});
     }
 
     combineKeywords(arr1: string[], arr2: string[]) : string[] {
