@@ -177,12 +177,20 @@ export default class MainApp extends Component<any, AppState> {
     removeEnchantment:(enchantmentIndex: number) => void = (enchantmentIndex) => {
         const { creatures, selectedCreatureIndex } = this.state;
         const changedCreature = creatures[selectedCreatureIndex];
+        const enchantments = 
+            [...changedCreature.enchantments.slice(0, enchantmentIndex),
+            ...changedCreature.enchantments.slice(enchantmentIndex + 1)]
+        const newCreature = {...changedCreature, 
+            enchantments: enchantments,
+            keywords: enchantments.reduce(
+                (acc, ench) => this.combineKeywords(acc, ench.addedKeywords), changedCreature.creature.baseKeywords)
+            };
         const newCreatures = 
-            [...creatures.slice(0, selectedCreatureIndex),
-                {...changedCreature, enchantments: 
-                    [...changedCreature.enchantments.slice(0, enchantmentIndex),
-                    ...changedCreature.enchantments.slice(enchantmentIndex + 1)]},
-                ...creatures.slice(selectedCreatureIndex+1)];
+            this.updateCreatures(
+                [...creatures.slice(0, selectedCreatureIndex),
+                    newCreature,
+                    ...creatures.slice(selectedCreatureIndex+1)], 
+                this.state.nonAuraEnchantments);
         this.setState({creatures: newCreatures});
     }
 
