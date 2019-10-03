@@ -3,6 +3,7 @@ import dryadArborPic from '../res/DryadArbor.png'
 import gladecoverScoutPic from '../res/GladecoverScout.png'
 import korSpiritdancerPic from '../res/KorSpiritdancer.png'
 import slipperyBoglePic from '../res/SlipperyBogle.png';
+import silhanaLedgewalkerPic from '../res/SilhanaLedgewalker.png';
 
 import unflinchingCouragePic from '../res/UnflinchingCourage.png'
 import daybreakCoronetPic from '../res/DaybreakCoronet.png'
@@ -13,6 +14,7 @@ import rancorPic from '../res/Rancor.png'
 import spiderUmbraPic from '../res/SpiderUmbra.png'
 import spiritLinkPic from '../res/SpiritLink.png'
 import spiritMantlePic from '../res/SpiritMantle.png'
+import cartoucheOfSolidarityPic from '../res/CartoucheOfSolidarity.png'
 
 import {CreatureType , EnchantmentType} from '../CardTypes';
 
@@ -51,6 +53,16 @@ export const SlipperyBogle: CreatureType = {
     shortName: "Bogle",
     png: slipperyBoglePic,
     baseKeywords: ["hexproof"],
+    basePowerToughness: {power: 1, toughness: 1},
+    powerToughnessFunc: powerToughness => powerToughness,
+}
+
+
+export const SilhanaLedgewalker: CreatureType = {
+    name: "Silhana Ledgewalker",
+    shortName: "Ledgewalker",
+    png: slipperyBoglePic,
+    baseKeywords: ["hexproof", "can't be blocked except by creatures with flying"],
     basePowerToughness: {power: 1, toughness: 1},
     powerToughnessFunc: powerToughness => powerToughness,
 }
@@ -124,6 +136,14 @@ export const UnflinchingCourage: EnchantmentType = {
     addedKeywords: ["trample", "lifelink"],
     powerToughnessFunc: powerToughness => 
         ({power: powerToughness.power + 2, toughness: powerToughness.toughness + 2})
+}
+
+export const CartoucheOfSolidarity: EnchantmentType = {
+    name: "Cartouche of Solidarity",
+    png: cartoucheOfSolidarityPic,
+    addedKeywords: ["first strike"],
+    powerToughnessFunc: powerToughness => 
+        ({power: powerToughness.power + 1, toughness: powerToughness.toughness + 1})
 }
 
 export const CreatureList: CreatureType[] = 
