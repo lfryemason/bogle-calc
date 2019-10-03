@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/bogle-calc/static/css/main.dfca195d.chunk.css",
+    "main.js": "/bogle-calc/static/js/main.d67e7517.chunk.js",
+    "main.js.map": "/bogle-calc/static/js/main.d67e7517.chunk.js.map",
+    "runtime-main.js": "/bogle-calc/static/js/runtime-main.5e0b595f.js",
+    "runtime-main.js.map": "/bogle-calc/static/js/runtime-main.5e0b595f.js.map",
+    "static/js/2.d4b94315.chunk.js": "/bogle-calc/static/js/2.d4b94315.chunk.js",
+    "static/js/2.d4b94315.chunk.js.map": "/bogle-calc/static/js/2.d4b94315.chunk.js.map",
+    "index.html": "/bogle-calc/index.html",
+    "precache-manifest.23fdd52835b865b85ed6ae772c117370.js": "/bogle-calc/precache-manifest.23fdd52835b865b85ed6ae772c117370.js",
+    "service-worker.js": "/bogle-calc/service-worker.js",
+    "static/css/main.dfca195d.chunk.css.map": "/bogle-calc/static/css/main.dfca195d.chunk.css.map",
+    "static/media/CardTop.png": "/bogle-calc/static/media/CardTop.12b75d55.png",
+    "static/media/DaybreakCoronet.png": "/bogle-calc/static/media/DaybreakCoronet.b8beb4d7.png",
+    "static/media/DryadArbor.png": "/bogle-calc/static/media/DryadArbor.72ff5acd.png",
+    "static/media/EtherealArmor.png": "/bogle-calc/static/media/EtherealArmor.bfdb8f31.png",
+    "static/media/GladecoverScout.png": "/bogle-calc/static/media/GladecoverScout.9fde1c5b.png",
+    "static/media/GryffsBoon.png": "/bogle-calc/static/media/GryffsBoon.189d96ad.png",
+    "static/media/HyenaUmbra.png": "/bogle-calc/static/media/HyenaUmbra.7b408207.png",
+    "static/media/KorSpiritdancer.png": "/bogle-calc/static/media/KorSpiritdancer.f6f4c785.png",
+    "static/media/Rancor.png": "/bogle-calc/static/media/Rancor.f9aecbfb.png",
+    "static/media/SlipperyBogle.png": "/bogle-calc/static/media/SlipperyBogle.6315ae8e.png",
+    "static/media/SpiderUmbra.png": "/bogle-calc/static/media/SpiderUmbra.9ee53104.png",
+    "static/media/SpiritLink.png": "/bogle-calc/static/media/SpiritLink.d3d4df3a.png",
+    "static/media/SpiritMantle.png": "/bogle-calc/static/media/SpiritMantle.46b75a2c.png",
+    "static/media/UnflinchingCourage.png": "/bogle-calc/static/media/UnflinchingCourage.b397338d.png"
+  }
+}
