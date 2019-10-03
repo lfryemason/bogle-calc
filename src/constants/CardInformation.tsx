@@ -61,7 +61,7 @@ export const SlipperyBogle: CreatureType = {
 export const SilhanaLedgewalker: CreatureType = {
     name: "Silhana Ledgewalker",
     shortName: "Ledgewalker",
-    png: slipperyBoglePic,
+    png: silhanaLedgewalkerPic,
     baseKeywords: ["hexproof", "can't be blocked except by creatures with flying"],
     basePowerToughness: {power: 1, toughness: 1},
     powerToughnessFunc: powerToughness => powerToughness,
@@ -152,6 +152,7 @@ export const CreatureList: CreatureType[] =
     SlipperyBogle,
     KorSpiritdancer,
     DryadArbor,
+    SilhanaLedgewalker,
 ]
 
 export const EnchantmentList: EnchantmentType[] = 
@@ -165,4 +166,5 @@ export const EnchantmentList: EnchantmentType[] =
     SpiritLink,
     SpiritMantle,
     UnflinchingCourage,
+    CartoucheOfSolidarity
 ]
