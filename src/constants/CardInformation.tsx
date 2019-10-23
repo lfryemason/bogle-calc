@@ -70,7 +70,7 @@ export const SilhanaLedgewalker: CreatureType = {
 export const DaybreakCoronet: EnchantmentType = {
     name: "Daybreak Coronet",
     png: daybreakCoronetPic,
-    addedKeywords: ["vigilance", "trample", "lifelink"],
+    addedKeywords: ["vigilance", "first strike", "lifelink"],
     powerToughnessFunc: powerToughness => 
         ({power: powerToughness.power + 3, toughness: powerToughness.toughness + 3})
 }
