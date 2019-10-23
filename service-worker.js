@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/bogle-calc/precache-manifest.4ac3f0bd3d29e2848d3fd7adad49b2f5.js"
+  "/bogle-calc/precache-manifest.fe27ba6a38acd927e3a159f44ea770c2.js"
 );
 
 self.addEventListener('message', (event) => {

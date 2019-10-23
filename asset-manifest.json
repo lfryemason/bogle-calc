@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/bogle-calc/static/css/main.dfca195d.chunk.css",
-    "main.js": "/bogle-calc/static/js/main.7f8d8b48.chunk.js",
-    "main.js.map": "/bogle-calc/static/js/main.7f8d8b48.chunk.js.map",
+    "main.js": "/bogle-calc/static/js/main.7da02bc4.chunk.js",
+    "main.js.map": "/bogle-calc/static/js/main.7da02bc4.chunk.js.map",
     "runtime-main.js": "/bogle-calc/static/js/runtime-main.5e0b595f.js",
     "runtime-main.js.map": "/bogle-calc/static/js/runtime-main.5e0b595f.js.map",
     "static/js/2.6fc6960d.chunk.js": "/bogle-calc/static/js/2.6fc6960d.chunk.js",
     "static/js/2.6fc6960d.chunk.js.map": "/bogle-calc/static/js/2.6fc6960d.chunk.js.map",
     "index.html": "/bogle-calc/index.html",
-    "precache-manifest.4ac3f0bd3d29e2848d3fd7adad49b2f5.js": "/bogle-calc/precache-manifest.4ac3f0bd3d29e2848d3fd7adad49b2f5.js",
+    "precache-manifest.fe27ba6a38acd927e3a159f44ea770c2.js": "/bogle-calc/precache-manifest.fe27ba6a38acd927e3a159f44ea770c2.js",
     "service-worker.js": "/bogle-calc/service-worker.js",
     "static/css/main.dfca195d.chunk.css.map": "/bogle-calc/static/css/main.dfca195d.chunk.css.map",
     "static/media/CardTop.png": "/bogle-calc/static/media/CardTop.12b75d55.png",

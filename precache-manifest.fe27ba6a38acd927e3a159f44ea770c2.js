@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "120c8e46febabeba651cd3ea487026e6",
+    "revision": "2a0ef175558beed94c1f53e11fb94870",
     "url": "/bogle-calc/index.html"
   },
   {
-    "revision": "76e9506b6aa257ceba70",
+    "revision": "d318db8f88774dfe59d6",
     "url": "/bogle-calc/static/css/main.dfca195d.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/bogle-calc/static/js/2.6fc6960d.chunk.js"
   },
   {
-    "revision": "76e9506b6aa257ceba70",
-    "url": "/bogle-calc/static/js/main.7f8d8b48.chunk.js"
+    "revision": "d318db8f88774dfe59d6",
+    "url": "/bogle-calc/static/js/main.7da02bc4.chunk.js"
   },
   {
     "revision": "9297e839cb757a1b3b22",
